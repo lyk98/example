@@ -3,7 +3,6 @@ package com.github.lyk98.example.springbootmqtt.config.mqtt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.integration.annotation.MessagingGateway;
 import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.mqtt.core.MqttPahoClientFactory;
@@ -32,21 +31,13 @@ public class MqttClientOutConfig {
     @Bean
     @ServiceActivator(inputChannel = "mqttOutboundChannel")
     public MessageHandler mqttOutbound(MqttPahoClientFactory mqttClientFactory) {
-        String clientId = "lanm2m-mqtt-" + System.currentTimeMillis();
+        String clientId = "mqtt-" + System.currentTimeMillis();
         MqttPahoMessageHandler messageHandler = new MqttPahoMessageHandler(clientId, mqttClientFactory);
         messageHandler.setAsync(true);
-        messageHandler.setDefaultQos(1);
-
         if (Objects.nonNull(mqttServerConfig.getPub())) {
             messageHandler.setDefaultTopic(mqttServerConfig.getPub());
         }
-
         return messageHandler;
-    }
-
-    @MessagingGateway(defaultRequestChannel = "mqttOutboundChannel")
-    public interface MyGateway {
-        void sendToMqtt(String data);
     }
 
 }
