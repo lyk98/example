@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "mqtt",
+      "type": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig",
+      "sourceType": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "mqtt.host",
+      "type": "java.lang.String",
+      "description": "mqtt 服务器地址",
+      "sourceType": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig"
+    },
+    {
+      "name": "mqtt.password",
+      "type": "java.lang.String",
+      "description": "mqtt 密码",
+      "sourceType": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig"
+    },
+    {
+      "name": "mqtt.pub",
+      "type": "java.lang.String",
+      "description": "默认发布主题",
+      "sourceType": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig"
+    },
+    {
+      "name": "mqtt.sub",
+      "type": "java.lang.String[]",
+      "description": "订阅的主题",
+      "sourceType": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig"
+    },
+    {
+      "name": "mqtt.username",
+      "type": "java.lang.String",
+      "description": "mqtt 用户名",
+      "sourceType": "com.github.lyk98.example.springbootmqtt.config.mqtt.MqttServerConfig"
+    }
+  ],
+  "hints": []
+}
