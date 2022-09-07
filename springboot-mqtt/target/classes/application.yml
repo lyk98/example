@@ -1,4 +1,0 @@
-mqtt:
-    host: tcp://mqtt.eclipseprojects.io:1883
-    sub: "test"
-    pub: "test"
