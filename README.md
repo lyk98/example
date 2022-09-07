@@ -1,5 +1,5 @@
 # example
 学习例子
 
-- 题目
+- 目录
   - springboot-mqtt:SpringBoot集成MQTT
